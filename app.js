@@ -11,7 +11,7 @@ let posts = [];
 
 const app = express();
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //h
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
