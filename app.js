@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost:27017/blogDB', {
+mongoose.connect('mongodb+srv://admin-sameer:16122000@cluster0.flijlqq.mongodb.net/blogDB', {
   useNewUrlParser: true
 });
 
@@ -75,6 +75,11 @@ app.get('/posts/:postId', function (req, res) {
   });
 });
 
-app.listen(3000, function () {
-  console.log("App is live on http://localhost:3000");
+let port = process.env.PORT;
+if(port == null || port == ""){
+    port = 3000;
+}
+
+app.listen(port, function () {
+  console.log("Server has started successfully.");
 });
